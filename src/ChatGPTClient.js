@@ -352,6 +352,7 @@ ${botMessage.message}
 
         let reply = '';
         let result = null;
+        let usage = {};
         if (typeof opts.onProgress === 'function') {
             await this.getCompletion(
                 payload,
@@ -386,6 +387,7 @@ ${botMessage.message}
             }
             if (this.isChatGptModel) {
                 reply = result.choices[0].message.content;
+                usage = result.usage;
             } else {
                 reply = result.choices[0].text.replace(this.endToken, '');
             }
@@ -403,6 +405,7 @@ ${botMessage.message}
             parentMessageId: userMessage.id,
             role: 'ChatGPT',
             message: reply,
+            usage: usage
         };
         conversation.messages.push(replyMessage);
 
