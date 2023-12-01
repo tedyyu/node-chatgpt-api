@@ -405,7 +405,7 @@ ${botMessage.message}
             parentMessageId: userMessage.id,
             role: 'ChatGPT',
             message: reply,
-            usage: usage
+            usage: usage,
         };
         conversation.messages.push(replyMessage);
 
@@ -415,6 +415,7 @@ ${botMessage.message}
             parentMessageId: replyMessage.parentMessageId,
             messageId: replyMessage.id,
             details: result || {},
+            usage: usage,
         };
 
         if (shouldGenerateTitle) {
