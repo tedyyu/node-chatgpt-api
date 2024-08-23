@@ -195,7 +195,7 @@ module.exports = {
             // max_tokens: 1000,
         },
         // (Optional) Davinci models have a max context length of 4097 tokens, but you may need to change this for other models.
-        // maxContextTokens: 4097,
+        maxContextTokens: 8096,
         // (Optional) You might want to lower this to save money if using a paid model like `text-davinci-003`.
         // Earlier messages will be dropped until the prompt is within the limit.
         // maxPromptTokens: 3097,
